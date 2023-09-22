@@ -1,3 +1,10 @@
+## [1.0.12](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.11...v1.0.12) (2023-09-22)
+
+
+### Bug Fixes
+
+* fixed semantic-release-gh-pages-plugin ([19342a3](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/19342a354e0b0c6bf4c743da888702d6b5d6f4e6))
+
 ## [1.0.11](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.10...v1.0.11) (2023-09-22)
 
 

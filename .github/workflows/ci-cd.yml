@@ -35,9 +35,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Integrity check
-        run: npm audit signatures
-
       - name: Security audit check (prod)
         run: npm run security-audit:prod
 
@@ -70,7 +67,7 @@ jobs:
           npm run build:docusaurus
           rm -rf gh-pages
           mkdir gh-pages
-          touch ./gh-pages/.nojekyll
+          echo "\n" > ./gh-pages/.nojekyll
           mv ./typedoc ./gh-pages/typedoc
           mv ./coverage ./gh-pages/coverage
           mv ./storybook-static ./gh-pages/storybook

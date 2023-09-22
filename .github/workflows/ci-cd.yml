@@ -30,7 +30,7 @@ jobs:
       - name: Select Node version
         uses: actions/setup-node@v3
         with:
-          node-version-file: .nvmrc
+          node-version-file: '.nvmrc'
 
       - name: Install dependencies
         run: npm ci
@@ -67,12 +67,10 @@ jobs:
           npm run build:docusaurus
           rm -rf gh-pages
           mkdir gh-pages
-          echo "\n" > ./gh-pages/.nojekyll
           mv ./typedoc ./gh-pages/typedoc
           mv ./coverage ./gh-pages/coverage
           mv ./storybook-static ./gh-pages/storybook
           mv ./docusaurus/build ./gh-pages/docs
-          ls -la ./gh-pages
 
       - name: Release
         if: ${{ github.ref == 'refs/heads/master' }}

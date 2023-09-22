@@ -44,7 +44,7 @@ jobs:
       - name: Security audit check (dev)
         run: npm run security-audit:dev
 
-      - name: Validate commits using commitlint
+      - name: Lint commit
         uses: wagoid/commitlint-github-action@v5
         with:
           failOnErrors: true

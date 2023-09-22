@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
 
-exec < /dev/tty && npx cz --hook || true
+# Check if either $CI is set
+if [ "$CI" = "true" ]; then
+  # If it's CI, run `npx cz` with `--hook` without interaction
+  npx cz --hook || true
+else
+  # In a local development environment, run the hook as usual
+  . "$(dirname -- "$0")/_/husky.sh"
+  exec < /dev/tty && npx cz --hook || true
+fi

@@ -27,12 +27,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Select Node version
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
 
       - name: Install dependencies
         run: npm ci
@@ -48,14 +47,11 @@ jobs:
         with:
           failOnErrors: true
 
-      - name: Cache
+      - name: Setup cache
         uses: actions/cache@v3
         with:
-          path: |
-            ~/.cache/
+          path: ~/.cache/
           key: ${{ runner.os }}-cache-${{ hashFiles('**/package-lock.json', '**/.eslintrc.cjs', '**/.prettierrc.cjs') }}
-          restore-keys: |
-            ${{ runner.os }}-cache-
 
       - name: Lint
         run: npm run lint -- --cache --cache-strategy content --cache-location ~/.cache/.eslintcache
@@ -63,7 +59,7 @@ jobs:
       - name: Format
         run: npm run format -- --cache --cache-strategy content --cache-location ~/.cache/.prettiercache
 
-      - name: List cached
+      - name: List cache
         run: ls -lah ~/.cache/
 
       - name: Test

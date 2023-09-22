@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.3...v1.0.4) (2023-09-22)
+
+
+### Bug Fixes
+
+* fixed GH pages .nojekyll ([73ec05e](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/73ec05e09dc11b770d49a2e6e9519e01ebd95074))
+
 ## [1.0.3](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.2...v1.0.3) (2023-09-22)
 
 

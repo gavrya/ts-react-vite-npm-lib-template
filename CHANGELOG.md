@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.5...v1.0.6) (2023-09-22)
+
+
+### Bug Fixes
+
+* fixed workflow ([4eff40e](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/4eff40e26c4d1b529623b98d6b2a5e0eca91ea32))
+
 ## [1.0.5](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.4...v1.0.5) (2023-09-22)
 
 

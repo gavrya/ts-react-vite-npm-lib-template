@@ -1,0 +1,95 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: '*'
+
+permissions:
+  contents: read # for checkout
+
+jobs:
+  gates:
+    name: Build, Test, Release
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write       # to be able to publish a GitHub release
+      issues: write         # to be able to comment on released issues
+      pull-requests: write  # to be able to comment on released pull requests
+      id-token: write       # to enable use of OIDC for npm provenance
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Validate commits using commitlint
+        uses: wagoid/commitlint-github-action@v5
+        with:
+          failOnErrors: false # change to "true" to enable commitlint validation
+
+      - name: Select Node version
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+
+      - name: Print versions
+        run: |
+          echo "Ubuntu version:"
+          lsb_release -a
+          uname -a
+          echo "node version:"
+          node -v
+          echo "npm version:"
+          npm -v
+          echo "npx version:"
+          npx -v
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Integrity check
+        run: npm audit signatures
+
+      - name: Security audit check (prod)
+        run: npm run security-audit:prod
+
+      - name: Security audit check (dev)
+        run: npm run security-audit:dev
+
+      - name: Lint
+        run: npm lint
+
+      - name: Format
+        run: npm format
+
+      - name: Test
+        run: npm test
+
+      - name: Build
+        run: npm build
+
+      - name: Generate GitHub pages
+        if: ${{ github.ref == 'refs/heads/master' }}
+        run: |
+          npm run build:typedoc
+          npm run test:coverage
+          npm run build:storybook
+          npm run build:docusaurus
+          rm -rf gh-pages
+          mkdir gh-pages
+          mv -r ./typedoc ./gh-pages/typedoc
+          mv -r ./coverage ./gh-pages/coverage
+          mv -r ./storybook-static ./gh-pages/storybook
+          mv -r ./docusaurus/build ./gh-pages/docs
+
+      - name: Release
+        if: ${{ github.ref == 'refs/heads/master' }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release --dry-run

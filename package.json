@@ -1,28 +1,123 @@
 {
-  "name": "ts_react_vite_npm_lib_template",
+  "name": "ts-react-vite-npm-lib-template",
+  "description": "Starter template for building TS React libraries using Vite",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "keywords": [
+    "vite react typescript npm library template"
+  ],
   "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gavrya/ts_react_vite_npm_lib_template.git"
+  },
+  "homepage": "https://gavrya.github.io/ts-react-vite-npm-lib-template/docs",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --run --coverage",
+    "test:dashboard": "vitest --ui",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "format": "prettier 'src/**/*.{ts,tsx,json}' --check",
+    "format:fix": "prettier 'src/**/*.{ts,tsx,json}' --write",
+    "prepare": "husky install",
+    "commit": "cz",
+    "storybook": "cross-env DISABLE_LIBRARY_MODE=true storybook dev -p 6006",
+    "build:storybook": "cross-env DISABLE_LIBRARY_MODE=true storybook build",
+    "docusaurus": "cd ./docusaurus && npm i && npm run start",
+    "build:docusaurus": "cd ./docusaurus && npm ci && npm run build",
+    "build:typedoc": "typedoc ./src/index.ts --out ./typedoc",
+    "security-audit:prod": "npm audit --omit=dev --audit-level=low",
+    "security-audit:dev": "npm audit --audit-level=moderate"
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@qiwi/semantic-release-gh-pages-plugin": "^5.2.8",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@storybook/addon-essentials": "^7.4.1",
+    "@storybook/addon-interactions": "^7.4.1",
+    "@storybook/addon-links": "^7.4.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.1",
+    "@storybook/react": "^7.4.1",
+    "@storybook/react-vite": "^7.4.1",
+    "@storybook/testing-library": "^0.2.0",
+    "@testing-library/jest-dom": "^6.1.2",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "^18.17.14",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
     "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "@vitest/coverage-v8": "^0.34.3",
+    "@vitest/ui": "^0.34.3",
+    "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest-dom": "^5.1.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "eslint-plugin-sonarjs": "^0.21.0",
+    "eslint-plugin-storybook": "^0.6.13",
+    "eslint-plugin-testing-library": "^6.0.1",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "eslint-plugin-vitest": "^0.2.8",
+    "eslint-plugin-vitest-globals": "^1.4.0",
+    "husky": "^8.0.0",
+    "jsdom": "^22.1.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "semantic-release": "^21.1.1",
+    "storybook": "^7.4.1",
+    "typedoc": "^0.25.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.5.3",
+    "vitest": "^0.34.3"
+  },
+  "peerDependencies": {},
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix"
+    ],
+    "src/**/*.json": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0 || >=19.0.0 || >=20.0.0"
   }
 }

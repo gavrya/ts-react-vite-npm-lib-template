@@ -1,0 +1,17 @@
+# Dist
+dist
+
+# Coverage
+coverage
+
+# Storybook
+storybook-static
+
+# Docusaurus
+docusaurus
+
+# GH pages
+gh-pages
+
+# Typedoc
+typedoc

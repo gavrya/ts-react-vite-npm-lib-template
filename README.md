@@ -148,7 +148,7 @@ YT video tutorial: [https://youtu.be/QZdY4XYbqLI?t=411](https://youtu.be/QZdY4XY
 git checkout --orphan gh-pages
 
 # Create .nojekyll GitHub-related file
-# Helps to avoid issues with the files names that starts with underscore
+# Helps to avoid issues with the file names that starts with underscore
 touch .nojekyll
 git add .nojekyll
 

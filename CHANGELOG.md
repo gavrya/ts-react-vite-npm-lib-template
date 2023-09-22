@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.8...v1.0.9) (2023-09-22)
+
+
+### Bug Fixes
+
+* use cache ([7653e7e](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/7653e7ed8819e7593f78611d836dc66eb3455b40))
+
 ## [1.0.8](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.7...v1.0.8) (2023-09-22)
 
 

@@ -73,6 +73,7 @@ jobs:
           mv ./typedoc ./gh-pages/typedoc
           mv ./coverage ./gh-pages/coverage
           mv ./storybook-static ./gh-pages/storybook
+          touch ./gh-pages/storybook/.nojekyll
           mv ./docusaurus/build ./gh-pages/docs
 
       - name: Release

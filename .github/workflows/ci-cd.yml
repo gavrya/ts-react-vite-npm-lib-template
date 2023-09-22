@@ -27,6 +27,12 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Setup cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/
+          key: ${{ runner.os }}-cache-${{ hashFiles('**/package-lock.json', '**/.eslintrc.cjs', '**/.prettierrc.cjs') }}
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -36,31 +42,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Security audit check (prod)
+      - name: Security audit (prod)
         run: npm run security-audit:prod
 
-      - name: Security audit check (dev)
+      - name: Security audit (dev)
         run: npm run security-audit:dev
 
-      - name: Lint commit
+      - name: Commitlint
         uses: wagoid/commitlint-github-action@v5
         with:
           failOnErrors: true
 
-      - name: Setup cache
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/
-          key: ${{ runner.os }}-cache-${{ hashFiles('**/package-lock.json', '**/.eslintrc.cjs', '**/.prettierrc.cjs') }}
-
-      - name: Lint
+      - name: ESLint
         run: npm run lint -- --cache --cache-strategy content --cache-location ~/.cache/.eslintcache
 
-      - name: Format
+      - name: Prettier
         run: npm run format -- --cache --cache-strategy content --cache-location ~/.cache/.prettiercache
-
-      - name: List cache
-        run: ls -lah ~/.cache/
 
       - name: Test
         run: npm run test
@@ -82,7 +79,6 @@ jobs:
           mv ./coverage ./gh-pages/coverage
           mv ./storybook-static ./gh-pages/storybook
           mv ./docusaurus/build ./gh-pages/docs
-          ls -lah ./gh-pages
 
       - name: Release
         if: ${{ github.ref == 'refs/heads/master' }}

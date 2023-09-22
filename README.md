@@ -100,6 +100,7 @@ npm install
 
 ### 3) Edit `package.json`
 
+- Change `version` to initial version 0.0.1
 - Change `name` to your git repo name
 - Edit `description`
 - Change `private` to `false` if you plan to publish your package to the npm
@@ -146,10 +147,15 @@ YT video tutorial: [https://youtu.be/QZdY4XYbqLI?t=411](https://youtu.be/QZdY4XY
 # It doesn't contain any files or commit history from the previous branch you were on.
 git checkout --orphan gh-pages
 
+# Create .nojekyll GitHub-related file
+# Helps to avoid issues with the files names that starts with underscore
+touch .nojekyll
+git add .nojekyll
+
 # This command creates a commit in the gh-pages branch with the specified commit message.
 # The commit itself doesn't introduce any changes to the branch because it's empty.
 # However, this initial commit is often used as a placeholder to initialize the branch.
-git commit --allow-empty -m "Initialize empty gh-pages branch"
+git commit --allow-empty -m "Init gh-pages branch"
 
 # This command pushes the local gh-pages branch, including the empty commit you created earlier, to the remote repository named origin.
 # As a result, the remote repository now has a branch called gh-pages with the empty commit, and you can use this branch to publish content or set up a GitHub Pages site.
@@ -167,31 +173,9 @@ GitHub Pages static UI routes:
 `/storybook-static` - Storybook\
 `/typedoc` - Typedoc
 
-### 9) Adjust GitHub Actions workflow `.github/workflows/ci-cd.yml`
+### 9) Remove `example` directory from the `src` folder and place your own code
 
-- Enable commitlint validation
-
-```shell
-  - name: Validate commits using commitlint
-    uses: wagoid/commitlint-github-action@v5
-    with:
-      failOnErrors: fasle # change to "true"
-```
-
-- Allow semantic-release to publish and release new versions of npm package
-
-```shell
-  - name: Release
-    if: ${{ github.ref == 'refs/heads/master' }}
-    env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-    run: npx semantic-release --dry-run # remove '--dry-run' argument
-```
-
-### 10) Remove `example` directory from the `src` folder and place your own code
-
-### 11) Make initial commit and push changes
+### 10) Make initial commit and push changes
 
 ```shell
 # Add your files and commit them
@@ -210,5 +194,3 @@ git remote -v
 # Push your commits to the new remote origin
 git push -u origin master
 ```
-
-### 12) Develop your library

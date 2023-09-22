@@ -13,11 +13,7 @@ module.exports = {
     [
       '@semantic-release/github',
       {
-        assets: [
-          'artifact/*.tgz',
-          { path: 'dist/index.esm.js', label: 'ESM module' },
-          { path: 'dist/index.umd.js', label: 'UMD module' },
-        ],
+        assets: ['artifact/*.tgz'],
       },
     ],
     [

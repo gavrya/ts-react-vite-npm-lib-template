@@ -75,6 +75,7 @@ jobs:
           mv ./coverage ./gh-pages/coverage
           mv ./storybook-static ./gh-pages/storybook
           mv ./docusaurus/build ./gh-pages/docs
+          ls -la ./gh-pages
 
       - name: Release
         if: ${{ github.ref == 'refs/heads/master' }}

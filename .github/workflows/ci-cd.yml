@@ -56,6 +56,8 @@ jobs:
           key: ${{ runner.os }}-cache-${{ hashFiles('**/package-lock.json', '**/.eslintrc.cjs', '**/.prettierrc.cjs') }}
           restore-keys: |
             ${{ runner.os }}-cache-
+
+      - name: List cache
         run: ls -lah ~/.cache/
 
       - name: Lint

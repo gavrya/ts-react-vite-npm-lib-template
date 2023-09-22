@@ -48,11 +48,21 @@ jobs:
         with:
           failOnErrors: true
 
+      - name: Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/
+          key: ${{ runner.os }}-cache-${{ hashFiles('**/package-lock.json', '**/.eslintrc.cjs', '**/.prettierrc.cjs') }}
+          restore-keys: |
+            ${{ runner.os }}-cache-
+        run: ls -lah ~/.cache/
+
       - name: Lint
-        run: npm run lint
+        run: npm run lint -- --cache --cache-strategy content --cache-location ~/.cache/.eslintcache
 
       - name: Format
-        run: npm run format
+        run: npm run format -- --cache --cache-strategy content --cache-location ~/.cache/.prettiercache
 
       - name: Test
         run: npm run test

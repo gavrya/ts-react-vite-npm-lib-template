@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[1243],{252:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/ts-react-vite-npm-lib-template/docs/blog/tags/docusaurus","allTagsPath":"/ts-react-vite-npm-lib-template/docs/blog/tags","count":4}')}}]);

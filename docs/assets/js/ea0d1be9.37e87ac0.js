@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocusaurus=self.webpackChunkdocusaurus||[]).push([[2235],{747:e=>{e.exports=JSON.parse('{"label":"facebook","permalink":"/ts-react-vite-npm-lib-template/docs/blog/tags/facebook","allTagsPath":"/ts-react-vite-npm-lib-template/docs/blog/tags","count":1}')}}]);

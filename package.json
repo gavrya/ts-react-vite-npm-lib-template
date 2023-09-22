@@ -2,7 +2,7 @@
   "name": "ts-react-vite-npm-lib-template",
   "description": "Starter template for building TS React libraries using Vite",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "keywords": [
     "vite react typescript npm library template"

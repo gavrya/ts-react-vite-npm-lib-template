@@ -28,6 +28,7 @@ module.exports = {
       {
         src: 'gh-pages',
         branch: 'gh-pages',
+        dotfiles: true,
       },
     ],
   ],

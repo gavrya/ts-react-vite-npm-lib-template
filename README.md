@@ -147,11 +147,6 @@ YT video tutorial: [https://youtu.be/QZdY4XYbqLI?t=411](https://youtu.be/QZdY4XY
 # It doesn't contain any files or commit history from the previous branch you were on.
 git checkout --orphan gh-pages
 
-# Create .nojekyll GitHub-related file
-# Helps to avoid issues with the file names that starts with underscore
-touch .nojekyll
-git add .nojekyll
-
 # This command creates a commit in the gh-pages branch with the specified commit message.
 # The commit itself doesn't introduce any changes to the branch because it's empty.
 # However, this initial commit is often used as a placeholder to initialize the branch.

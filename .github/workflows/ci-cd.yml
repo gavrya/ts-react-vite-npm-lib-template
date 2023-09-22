@@ -77,11 +77,11 @@ jobs:
           npm run build:docusaurus
           rm -rf gh-pages
           mkdir gh-pages
+          touch ./gh-pages/.nojekyll
           mv ./typedoc ./gh-pages/typedoc
           mv ./coverage ./gh-pages/coverage
           mv ./storybook-static ./gh-pages/storybook
           mv ./docusaurus/build ./gh-pages/docs
-          touch ./gh-pages/.nojekyll
           ls -lah ./gh-pages
 
       - name: Release

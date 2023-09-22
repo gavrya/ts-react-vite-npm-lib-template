@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1695388337922" clover="3.2.0">
-  <project timestamp="1695388337923" name="All files">
+<coverage generated="1695391203984" clover="3.2.0">
+  <project timestamp="1695391203985" name="All files">
     <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1" elements="13" coveredelements="13" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
     <file name="calculate.ts" path="/home/runner/work/ts-react-vite-npm-lib-template/ts-react-vite-npm-lib-template/src/example/calculate.ts">
       <metrics statements="11" coveredstatements="11" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>

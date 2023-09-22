@@ -63,7 +63,7 @@ jobs:
       - name: Format
         run: npm run format -- --cache --cache-strategy content --cache-location ~/.cache/.prettiercache
 
-      - name: List cache
+      - name: List cached
         run: ls -lah ~/.cache/
 
       - name: Test

@@ -1,3 +1,10 @@
+## [1.0.11](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.10...v1.0.11) (2023-09-22)
+
+
+### Bug Fixes
+
+* added .nojekyll ([288f3a8](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/288f3a879f2ba4219aaa4469e23d276ddb7b50e6))
+
 ## [1.0.10](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.9...v1.0.10) (2023-09-22)
 
 

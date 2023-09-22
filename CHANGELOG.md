@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.1...v1.0.2) (2023-09-22)
+
+
+### Bug Fixes
+
+* fixed Storybook gh pages ([21ab9d8](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/21ab9d8bb6d26e0f35f1138ca25bf11892b7f9c9))
+
 ## [1.0.1](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.0...v1.0.1) (2023-09-22)
 
 

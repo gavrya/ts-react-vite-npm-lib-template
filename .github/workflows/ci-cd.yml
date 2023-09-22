@@ -50,16 +50,16 @@ jobs:
       - name: Integrity check
         run: npm audit signatures
 
-      - name: Validate commits using commitlint
-        uses: wagoid/commitlint-github-action@v5
-        with:
-          failOnErrors: false # change to "true" to enable commitlint validation
-
       - name: Security audit check (prod)
         run: npm run security-audit:prod
 
       - name: Security audit check (dev)
         run: npm run security-audit:dev
+
+      - name: Validate commits using commitlint
+        uses: wagoid/commitlint-github-action@v5
+        with:
+          failOnErrors: false # change to "true" to enable commitlint validation
 
       - name: Lint
         run: npm run lint

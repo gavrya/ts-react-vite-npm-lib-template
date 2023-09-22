@@ -1,3 +1,12 @@
+## [1.0.7](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.6...v1.0.7) (2023-09-22)
+
+
+### Bug Fixes
+
+* use cache by eslint and prettier linters ([8fa1d59](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/8fa1d59528185137b17acbfefde597f791839381))
+* use cache by eslint and prettier linters ([4a37fbb](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/4a37fbb4c011eb2f61d3842b9336f31e237fc8eb))
+* use cache by eslint and prettier linters ([1846c7e](https://github.com/gavrya/ts_react_vite_npm_lib_template/commit/1846c7e4f86e78771f12a68b2ffe24529c9a3f95))
+
 ## [1.0.6](https://github.com/gavrya/ts_react_vite_npm_lib_template/compare/v1.0.5...v1.0.6) (2023-09-22)
 
 

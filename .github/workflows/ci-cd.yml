@@ -59,7 +59,7 @@ jobs:
       - name: Validate commits using commitlint
         uses: wagoid/commitlint-github-action@v5
         with:
-          failOnErrors: false # change to "true" to enable commitlint validation
+          failOnErrors: false
 
       - name: Lint
         run: npm run lint

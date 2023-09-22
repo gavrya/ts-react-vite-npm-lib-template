@@ -59,7 +59,7 @@ jobs:
       - name: Validate commits using commitlint
         uses: wagoid/commitlint-github-action@v5
         with:
-          failOnErrors: false
+          failOnErrors: true
 
       - name: Lint
         run: npm run lint
@@ -92,4 +92,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --dry-run
+        run: npx semantic-release

@@ -6,13 +6,18 @@ import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import packageJson from './package.json';
 
+type PackageJson = typeof packageJson & {
+  peerDependencies?: Record<string, string>;
+};
+
 const isLibraryMode = !process.env.DISABLE_LIBRARY_MODE;
 
 const getPath = (filePath: string) => {
   return fileURLToPath(new URL(filePath, import.meta.url));
 };
 
-const { devDependencies = {}, peerDependencies = {} } = packageJson;
+const { devDependencies = {}, peerDependencies = {} } =
+  packageJson as PackageJson;
 
 const externalDependencies = Object.keys({
   ...devDependencies,

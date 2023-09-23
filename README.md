@@ -103,7 +103,7 @@ npm install
 - Change `version` to initial version 0.0.1
 - Change `name` to your git repo name
 - Edit `description`
-- Change `private` to `true` if you plan to publish your package to the npm
+- Change `private` to `true` when you will be ready to publish your package to the npm
 - Edit `license`
 - Edit `keywords`
 - Change `repository.url` using template `https://github.com/{git_user}/{git_repo_name}.git`

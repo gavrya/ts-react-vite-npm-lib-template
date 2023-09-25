@@ -136,6 +136,8 @@ YT video tutorial: [https://youtu.be/QZdY4XYbqLI?t=411](https://youtu.be/QZdY4XY
 
 - Create `GH_TOKEN`
 
+![github-token.png](src%2Fexample%2Fimages%2Fgithub-token.png)
+
 ![github-secrets.png](src%2Fexample%2Fimages%2Fgithub-secrets.png)
 
 ### 8) Configure GitHub Pages

@@ -150,7 +150,7 @@ git checkout --orphan gh-pages
 # This command creates a commit in the gh-pages branch with the specified commit message.
 # The commit itself doesn't introduce any changes to the branch because it's empty.
 # However, this initial commit is often used as a placeholder to initialize the branch.
-git commit --allow-empty -m "Init gh-pages branch"
+git commit --allow-empty -m "chore: init"
 
 # This command pushes the local gh-pages branch, including the empty commit you created earlier, to the remote repository named origin.
 # As a result, the remote repository now has a branch called gh-pages with the empty commit, and you can use this branch to publish content or set up a GitHub Pages site.
@@ -175,7 +175,7 @@ GitHub Pages static UI routes:
 ```shell
 # Add your files and commit them
 git add .
-git commit -m "chore: initial commit"
+git commit -m "chore: init"
 
 # Create a new empty repository on GitHub (assuming it's named 'my-new-repo')
 # Copy the URL of the new repository (should be something like https://github.com/username/my-new-repo.git)

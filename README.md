@@ -134,7 +134,7 @@ YT video tutorial: [https://youtu.be/QZdY4XYbqLI?t=411](https://youtu.be/QZdY4XY
 
 ![npm-token.png](src%2Fexample%2Fimages%2Fnpm-token.png)
 
-- Create `GH_TOKEN`
+- Create `GH_TOKEN` [https://github.com/settings/tokens/new?scopes=repo](https://github.com/settings/tokens/new?scopes=repo)
 
 ![github-token.png](src%2Fexample%2Fimages%2Fgithub-token.png)
 

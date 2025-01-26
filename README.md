@@ -167,7 +167,7 @@ GitHub Pages static UI routes:
 
 `/docs` - Docusaurus\
 `/coverage` - Test Coverage\
-`/storybook-static` - Storybook\
+`/storybook` - Storybook\
 `/typedoc` - Typedoc
 
 ### 9) Remove `example` directory from the `src` folder and place your own code
